@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{Powers of the Golden Ratio}
+\author{Hal Peterson}
+
+\begin{document}
+\maketitle
+
+A definition of the golden ratio starts with Figure~\ref{fig:phi}, with two line segments cunningly designed so that the ratio of their lengths, $B/A$,
+\begin{figure}
+  \fbox{\includegraphics[width=8cm]{Phi2.pdf}}
+  \caption{Defining $\phi$ as a ratio of lengths (NTS)}
+  \label{fig:phi}
+\end{figure}
+is equal to the ratio of the length of their sum to the longer segment:
+\begin{equation}
+  B/A = (A+B)/B.
+  \label{phi:ratios}
+\end{equation}
+We can juggle that a bit to find something to solve:
+\begin{eqnarray*}
+  B/A & = & (A + B)/B \\
+  B^2 & = & A (A + B) \\
+  & = & A^2 + AB.
+\end{eqnarray*}
+We seek the ratio $B/A$; we can make that easier by setting $A=1$.
+Then the ratio is simply $B$ and the equation becomes:
+\begin{equation*}
+  B^2 = 1^2 + 1B = 1 + B.
+\end{equation*}
+So, if $\phi$ exists, it is a positive solution for $x$ in:
+\begin{equation}
+  x^2 - x - 1 = 0.
+  \label{phi:quadratic}
+\end{equation}
+
+Solve by completing the square.
+\begin{eqnarray*}
+  0 & = & x^2 - x - 1 \\
+  & = & (x^2 - x + 1/4) - 5/4 \\
+  & = & (x - 1/2)^2 - 5/4 \\
+  5/4 & = & (x - 1/2)^2 \\
+  \pm\sqrt{5/4} & = & x - 1/2 \\
+  \frac{1 \pm \sqrt{5}}{2} & = & x.
+\end{eqnarray*}
+
+Because $(1-\sqrt{5})/2 < 0$, the answer must be the other root:
+\begin{equation}
+  \phi = \frac{1 + \sqrt{5}}{2}.
+  \label{phi:value}
+\end{equation}
+Is it really?  Verify by substituting $\phi$ from Equation~\ref{phi:value} for $x$ in Equation~\ref{phi:quadratic}.
+\begin{eqnarray*}
+  0 & = & x^2 - x - 1 \\
+  & = & \phi^2 - \phi - 1 \\
+  & = & \left(\frac{1 + \sqrt{5}}{2}\right)^2 - \frac{1 + \sqrt{5}}{2} - 1 \\
+  & = & \frac{1 + 2\sqrt{5} + 5}{4} - \frac{2 + 2\sqrt{5}}{4} - 1 \\
+  & = & \frac{1 + 5 - 2 + 2\sqrt{5} - 2\sqrt{5}}{4} - 1 \\
+  & = & 4/4 - 1 \\
+  & = & 0. \hspace{20pt}\blacksquare
+\end{eqnarray*}
+Yes!
+
+Now, for the powers.  Watch the coefficients:
+\begin{eqnarray*}
+  \phi^1 & = & \phi \\
+  \phi^2 & = & \phi + 1 \\
+  \phi^3 & = & \phi(\phi + 1) = \phi^2 + \phi = \phi + 1 + \phi = 2\phi + 1 \\
+  \phi^4 & = & \phi(2\phi + 1) = 2\phi^2 + \phi = 2(\phi + 1) + \phi = 3\phi + 2 \\
+  \phi^5 & = & \phi(3\phi + 2) = 3\phi^2 + 2\phi = 3(\phi + 1) + 2\phi = 5\phi + 3 \\
+  \phi^6 & = & \phi(5\phi + 3) = 5\phi^2 + 3\phi = 5(\phi + 1) + 3\phi = 8\phi + 5 \\
+  & & \ldots.
+\end{eqnarray*}
+
+The coefficients of the $\phi$ term are $\langle 1, 1, 2, 3, 5, 8, \ldots\rangle$.  The coefficients of the constant term are $\langle 0, 1, 1, 2, 3, 5, \ldots\rangle$.  These sequences look suspiciously similar and suspiciously familiar.
+
+Generalize for $\phi^n$:
+\begin{equation}
+  \phi^n = a_n\phi + b_n
+\end{equation}
+
+Then:
+\begin{eqnarray*}
+  \phi^{n+1} & = & a_{n+1}\phi + b_{n+1} \\
+  & = & \phi(a_n\phi + b_n) \\
+  & = & a_n\phi^2 + b_n\phi \\
+  & = & a_n(\phi + 1) + b_n\phi \\
+  & = & (a_n + b_n) \phi + a_n.
+\end{eqnarray*}
+That is, with a little shift of indices:
+\begin{eqnarray*}
+  b_n & = & a_{n-1} \\
+  a_{n+1} & = & a_n + b_n \\
+  & = & a_n + a_{n-1}.
+\end{eqnarray*}
+That is, indeed, the Fibonacci sequence in the coefficients of the $\phi$ terms.  The coefficients of the constant terms are the same sequence lagged by one.
+
+
+\end{document}
