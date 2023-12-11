@@ -10,12 +10,12 @@
 \begin{document}
 \maketitle
 
-A definition of the golden ratio starts with Figure~\ref{fig:phi}, with two line segments cunningly designed so that the ratio of their lengths, $B/A$,
 \begin{figure}
-  \fbox{\includegraphics[width=8cm]{Phi2.pdf}}
+  \fbox{\includegraphics[width=8cm]{Phi3.pdf}}
   \caption{Defining $\phi$ as a ratio of lengths (NTS)}
   \label{fig:phi}
 \end{figure}
+A definition of the golden ratio $\phi$ starts in Figure~\ref{fig:phi}, with two line segments cunningly designed so that the ratio of their lengths, $B/A$,
 is equal to the ratio of the length of their sum to the longer segment:
 \begin{equation}
   B/A = (A+B)/B.
@@ -27,7 +27,7 @@ We can juggle that a bit to find something to solve:
   B^2 & = & A (A + B) \\
   & = & A^2 + AB.
 \end{eqnarray*}
-We seek the ratio $B/A$; we can make that easier by setting $A=1$.
+We seek the ratio $B/A$; we can simplify the equation by setting $A=1$.
 Then the ratio is simply $B$ and the equation becomes:
 \begin{equation*}
   B^2 = 1^2 + 1B = 1 + B.
@@ -65,7 +65,7 @@ Is it really?  Verify by substituting $\phi$ from Equation~\ref{phi:value} for $
 \end{eqnarray*}
 Yes!
 
-Now, for the powers.  Watch the coefficients:
+Now for the powers.  Watch the coefficients:
 \begin{eqnarray*}
   \phi^1 & = & \phi \\
   \phi^2 & = & \phi + 1 \\
@@ -76,7 +76,7 @@ Now, for the powers.  Watch the coefficients:
   & & \ldots.
 \end{eqnarray*}
 
-The coefficients of the $\phi$ term are $\langle 1, 1, 2, 3, 5, 8, \ldots\rangle$.  The coefficients of the constant term are $\langle 0, 1, 1, 2, 3, 5, \ldots\rangle$.  These sequences look suspiciously similar and suspiciously familiar.
+The coefficients of the $\phi$ term are $\langle 1, 1, 2, 3, 5, 8, \ldots\rangle$.  The constant terms are $\langle 0, 1, 1, 2, 3, 5, \ldots\rangle$.  These sequences look suspiciously similar and suspiciously familiar.
 
 Generalize for $\phi^n$:
 \begin{equation}
@@ -91,13 +91,12 @@ Then:
   & = & a_n(\phi + 1) + b_n\phi \\
   & = & (a_n + b_n) \phi + a_n.
 \end{eqnarray*}
-That is, with a little shift of indices:
+With a shift of indices:
 \begin{eqnarray*}
   b_n & = & a_{n-1} \\
   a_{n+1} & = & a_n + b_n \\
   & = & a_n + a_{n-1}.
 \end{eqnarray*}
-That is, indeed, the Fibonacci sequence in the coefficients of the $\phi$ terms.  The coefficients of the constant terms are the same sequence lagged by one.
-
+That is, indeed, the Fibonacci sequence in the coefficients of the $\phi$ terms.  The constant terms are the same Fibonacci sequence lagged by one.
 
 \end{document}
