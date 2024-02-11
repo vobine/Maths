@@ -1,0 +1,81 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{hyperref}
+
+\title{Maximum Partition-Product}
+\author{Hal Peterson}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{definition}
+  \label{definition:partition}
+  A partition $P(n)$ of an integer $n$ is a multiset of integers with elements, $p_i \in P(n)$ that sum to $n$.
+  All $p_i \geq 1$.
+\end{definition}
+
+For example, two distinct partitions of 6 are: $P(6) = \{ 2, 2, 2 \}$ and $P(6) = \{ 1, 2, 3 \}$.  There are many more.
+
+\begin{definition}
+  \label{definition:partition-product}
+  A partition-product $P^*$ is the product of all elements of a partition.
+\end{definition}
+
+For example, $P^*(\{ 1, 2, 3 \}) = 6$.
+
+The partition-product problem is, given $n$, to find a partition $P(n)$ to maximize the partition-product.
+
+For example, the distinct partitions of $n=4$ are:
+\begin{eqnarray*}
+  P(4) & = & \{ 4 \} \\
+  & = & \{ 1, 3 \} \\
+  & = & \{ 2, 2 \} \\
+  & = & \{ 1, 1, 2 \} \\
+  & = & \{ 1, 1, 1, 1 \}
+\end{eqnarray*}
+Their partition-products are, respectively, $4, 3, 4, 2, 1$.  So the maximum partition-product is
+\begin{equation*}
+  P^*(\{ 4 \}) = P^*(\{ 2, 2 \}) = 4.
+\end{equation*}
+
+\section{Solution(s)}
+
+Let's start with three observations.
+
+\subsection{Smaller is Better}
+
+\subsection{But $1$ is a Waste}
+
+\subsection{And $2$ is too Small}
+
+\subsection{Sub-Partitions}
+
+
+
+\subsection{General Solution}
+
+\begin{theorem}
+  Given $n$, the maximum partition-product $\max{P^*(P(n))}$
+\end{theorem}
+
+\section{Sources}
+
+The original idea came from the thumbnail description of a YouTube video on Presh Talkwakar's channel Mind Your Decisions:  \url{https://youtu.be/o-UF8JlqZ_c}.  I have not watched the video yet.
+
+The thumbnail refers to a problem from the 1976 International Mathematical Olympiad:  \url{https://www.imo-official.org/problems.aspx}.  The problem is:
+\begin{quote}
+  Determine, with proof, the largest number which is the product of positive integers whose sum is 1976.
+\end{quote}
+
+\end{document}
