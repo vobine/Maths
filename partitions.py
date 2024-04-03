@@ -4,21 +4,20 @@ def partitions(n: int) -> tuple:
     return tuple(pp for pp in partmax(n, n))
 
 def partmax(nn: int, mm: int) -> tuple:
-    # yield min(mm, nn)
-    # yield (mm,)
-    if nn == mm:
+    if mm < 1:
+        return
+    elif mm == 1:
+        yield (1,) * nn
+        return
+    elif nn == mm:
         yield (nn,)
-        mm -= 1
-    for ii in range(mm, 1, -1):
+    for ii in range(mm, 0, -1):
         for jj in range(ii, nn, ii):
             prefix = (ii,) * (jj // ii)
-            for subpart in partmax(nn - jj, min(nn - jj, ii - 1)):
-                # print(nn, mm, ii, jj, prefix, subpart)
+            for subpart in partmax(nn-jj, min(nn-jj, ii-1)):
                 yield prefix + subpart
-    if mm > 0 and nn % mm == 0:
-        yield (mm,) * (nn // mm)
-    # if nn > 1:
-    #    yield (1,) * nn
+        if nn > ii and nn % ii == 0:
+            yield (ii,) * (nn // ii)
 
 if '__main__' == __name__:
     print(str(partitions(5)))
