@@ -1,7 +1,19 @@
 #! /usr/bin/env python3
 
+from math import prod
+
 def partitions(n: int) -> tuple:
     return tuple(pp for pp in partmax(n, n))
+
+def prodmax(n:int) -> tuple:
+    value = 0
+    big = ()
+    for part in partitions(n):
+        partval = prod(part)
+        if partval > value:
+            value = partval
+            big = part
+    return big
 
 def partmax(nn: int, mm: int) -> tuple:
     if mm < 1:
