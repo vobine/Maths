@@ -41,7 +41,7 @@ class Partition:
             self._mset = Counter()
             self._mset[1] = 1
         else:
-            self._mset = copy(base.mset)
+            self._mset = base.mset
             if base.mset[value]:
                 self._mset[value] -= 1
                 self._mset[value + 1] += 1
@@ -62,8 +62,6 @@ class Partition:
                 strings.append('{0:d}'.format(kk))
         self._string = ' + '.join(strings)
 
-        self._parent = self._right = self._left = None
-
     @property
     def string(self) -> str:
         "Get canonical, hashable string representation of Partition."
@@ -71,8 +69,8 @@ class Partition:
 
     @property
     def mset(self) -> Counter:
-        "Get underlying multiset representation."
-        return self._mset
+        "Get a copy of the underlying multiset representation."
+        return copy(self._mset)
 
 if '__main__' == __name__:
     print(str(partitions(5)))
