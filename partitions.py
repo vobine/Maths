@@ -102,4 +102,4 @@ def partree(depth: int, root: Partition = None, kids: set = None) -> None:
                 kids.add(branch.string)
 
 if '__main__' == __name__:
-    print(str(partitions(5)))
+    partree(6)
