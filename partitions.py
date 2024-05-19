@@ -72,5 +72,26 @@ class Partition:
         "Get a copy of the underlying multiset representation."
         return copy(self._mset)
 
+def partree(depth: int, root: Partition = None) -> None:
+    """Construct and print a GraphViz representation of a partition DAG."""
+    if None == root:
+        # This is REALLY the root
+        root = Partition()
+        print('digraph {')
+        partree(depth-1, root)
+        print('}')
+    elif depth > 0:
+        branch = Partition(root)
+        print('"{0:s}" -> "{1:s}" [ style="solid" ]'.format(
+            root.string, branch.string))
+        partree(depth-1, branch)
+        mset = root.mset
+        for kk in sorted(mset.keys()):
+            if mset[kk]:
+                branch = Partition(root, kk)
+                print('"{0:s}" -> "{1:s}" [ style="dotted" ]'.format(
+                    root.string, branch.string))
+                partree(depth-1, branch)
+
 if '__main__' == __name__:
     print(str(partitions(5)))
