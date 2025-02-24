@@ -1,5 +1,5 @@
 camera {
-  location <4, 4, 4>
+  location <3, 3, 3>
   look_at <0, 0, 0>
 }
 
