@@ -1,5 +1,4 @@
 #include "colors.inc"
-#include "textures.inc"
 #include "norbert-cylinder.inc"
 #include "norbert-lights-camera.inc"
 
@@ -13,7 +12,7 @@ intersection {
     <-2, -2, -2>
     <2, 0.75, 2>
     texture {
-      pigment {color Gray50}
+      pigment {color SkyBlue}
     }
   }
 }
