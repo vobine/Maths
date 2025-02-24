@@ -1,0 +1,67 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+
+\usepackage{cite}
+
+\title{Norbert Wiener's Elevator Problem}
+
+\author{Hal Peterson}
+
+\begin{document}
+
+\maketitle
+
+\section{The Norbert Wiener Story}
+
+There are lots of Norbert Wiener stories \cite{Hardesty2021}.  In one
+of them, a colleague 
+set a question for Wiener as the two of them waited for an elevator;
+Wiener announced the solution as the elevator reached the fourth
+floor.  The problem:
+\begin{quotation}
+  You have a dowel, two inches in diameter.  Use a two-inch diameter
+  bit to drill a hole through the dowel, perpendicular to the axis and
+  straight through the center.  What is the volume of the wood removed
+  from the dowel?
+\end{quotation}
+
+\begin{figure}
+  \includegraphics[scale=0.25]{norbert.png}
+  \caption{Overview:  intersecting cylinders.}
+  \label{fig:overview}
+\end{figure}
+
+See Figure~\ref{fig:overview} for an illustration:  call the yellow
+cylinder the dowel and the green cylinder the drill bit (or vice
+versa, the problem is symmetric).
+
+\begin{figure}
+  \includegraphics[scale=0.25]{norbert-result.png}
+  \caption{Boundary of the drilled-out volume.}
+  \label{fig:boundary}
+\end{figure}
+
+To see the symmetry, Figure~\ref{fig:boundary} shows the volume
+drilled out.
+
+\section{Geometry}
+
+\section{Computing the Volume}
+
+\bibliography{norbert}
+\bibliographystyle{plain}
+
+\end{document}
