@@ -10,7 +10,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 
-\usepackage{hyperref}
+% \usepackage{hyperref}
 
 \usepackage{graphicx}
 
@@ -24,9 +24,9 @@
 
 \maketitle
 
-\section{The Norbert Wiener Story}
+\section{A Norbert Wiener Story}
 
-There are lots of Norbert Wiener stories \cite{Hardesty2021}.  In one
+There are lots of Norbert Wiener stories~\cite{Hardesty2021}.  In one
 of them, a colleague 
 set a question for Wiener as the two of them waited for an elevator;
 Wiener announced the solution as the elevator reached the fourth
@@ -59,7 +59,71 @@ drilled out.
 
 \section{Geometry}
 
+As is clear from Figure~\ref{fig:boundary}, the drilled-out volume is
+not one of the easy standard shapes, e,g, a sphere.  So, what
+\emph{is} it?
+
+Let's build it from components.  First, what is a cylinder?  Let's
+define it as the set of points (\emph{locus}, if you want the jargon)
+at a constant perpendicular distance, $r$, from a line in 3-D space.
+So for a cylinder centered on, say, the $\hat{x}$ axis, then the
+cylinder satisfies
+\begin{equation}
+  y^2 + z^2 = r^2.
+\end{equation}
+\label{eq:cylinder}
+For any given value of $x$, this defines a circle; over all values of
+$x$ it's a cylinder, with circular cross-section.
+
+What about the intersection of two perpendicular cylinders with equal
+radii, as in Figure~\ref{fig:overview}?  Let's assume that the green
+cylinder is centered on the $\hat{x}$ axis and the yellow cylinder is
+centered on the $\hat{y}$ axis.  Then their respective equations are:
+\begin{eqnarray*}
+  x^2 & = & r^2 - z^2 \\
+  y^2 & = & r^2 - z^2,
+\end{eqnarray*}
+or:
+\begin{eqnarray*}
+  x(z) & = & \pm \sqrt{r^2 - z^2} \\
+  y(z) & = & \pm \sqrt{r^2 - z^2}.
+\end{eqnarray*}
+
+Notice that $x(z) = y(z)$ for any given value of $z$.  That implies
+that the plane figure is a square.\footnote{This needs support, no?}
+
+\begin{figure}
+  \includegraphics[scale=0.25]{norbert-square.png}
+  \caption{The blue patch is a square.}
+  \label{fig:square}
+\end{figure}
+
+Consider, in Figure~\ref{fig:square}, the intersection with everything
+above $z=0.75$ planed off.  The blue shape is a square.\footnote{Prove it!}
+
 \section{Computing the Volume}
+\label{sec:computing}
+
+We're going to compute the volume $V$ of the octant of the
+intersection with all nonnegative coordinates.  Because the
+intersection is symmetrical, the volume of the whole is $8V$.
+
+We'll integrate a stack of squares, each in a plane normal to the
+$\hat{z}$ axis, starting with $z=0$ and proceeding to $z=r$.
+
+One corner of each square is on the $\hat{z}$ axis, at $x=y=0$.  The
+other corner is at the positive-$\hat{x},\hat{y}$ intersection of the
+surfaces of the two cylinders.  For now we'll leave those coordinates
+as a function of $z$:
+
+\begin{equation*}
+  V = \int_{z=0}^r x(z) y(z) dz
+\end{equation*}
+
+\section{Coda}
+
+Somehow the answer is always in the back of the book, if you look hard
+enough~\cite{Wikipedia-Steinmetz}.
 
 \bibliography{norbert}
 \bibliographystyle{plain}
