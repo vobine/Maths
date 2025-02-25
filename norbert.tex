@@ -84,10 +84,10 @@ centered on the $\hat{y}$ axis.  Then their respective equations are:
   y^2 & = & r^2 - z^2,
 \end{eqnarray*}
 or:
-\begin{eqnarray*}
-  x(z) & = & \pm \sqrt{r^2 - z^2} \\
-  y(z) & = & \pm \sqrt{r^2 - z^2}.
-\end{eqnarray*}
+\begin{eqnarray}
+  x(z) & = & \pm \sqrt{r^2 - z^2} \label{eq:x(z)} \\
+  y(z) & = & \pm \sqrt{r^2 - z^2}. \label{eq:y(z)}
+\end{eqnarray}
 
 Notice that $x(z) = y(z)$ for any given value of $z$.  That implies
 that the plane figure is a square.\footnote{This needs support, no?}
@@ -117,8 +117,20 @@ surfaces of the two cylinders.  For now we'll leave those coordinates
 as a function of $z$:
 
 \begin{equation*}
-  V = \int_{z=0}^r x(z) y(z) dz
+  V = \int_{z=0}^r x(z) y(z) dz.
 \end{equation*}
+
+We already have expressions for $x(z)$ and $y(z)$ from
+Equations~\ref{eq:x(z)} and~\ref{eq:y(z)}.  Substituting into the
+equation for $V$:
+
+\begin{eqnarray*}
+  V & = & \int_{z=0}^r \sqrt{r^2 - z^2} \sqrt{r^2 - z^2} dz \\
+  & = & \int_{z=0}^r r^2 - z^2 dz \\
+  & = & \left. (zr^2 - z^3/3) \right|_{z=0}^r \\
+  & = & (r^3 - r^3/3) - (0r^2 - 0^3/3) \\
+  & = & 2r^3/3.
+\end{eqnarray*}
 
 \section{Coda}
 
