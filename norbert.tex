@@ -1,4 +1,5 @@
 \documentclass[twocolumn]{article}
+\pagestyle{headings}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -16,7 +17,7 @@
 
 \usepackage{cite}
 
-\title{Norbert Wiener's Elevator Problem}
+\title{Norbert Wiener's Elevator Problem: \\ Pi Day 2025}
 
 \author{Hal Peterson}
 
@@ -45,17 +46,27 @@ floor.  The problem:
 \end{figure}
 
 See Figure~\ref{fig:overview} for an illustration:  call the yellow
-cylinder the dowel and the green cylinder the drill bit (or vice
-versa, the problem is symmetric).
+cylinder the dowel and the green cylinder the drill bit.\footnote{Vice
+versa would work as well, since the problem is symmetric.}
 
 \begin{figure}
   \includegraphics[scale=0.25]{norbert-result.png}
-  \caption{Boundary of the drilled-out volume.}
+  \caption{Boundary of the volume removed by the drill.}
   \label{fig:boundary}
 \end{figure}
 
-To see the symmetry, Figure~\ref{fig:boundary} shows the volume
-drilled out.
+To illustrate the symmetry, see Figure~\ref{fig:boundary}, showing the
+intersection, with the rest of the two cylinders removed.  Note
+also the apparent color swap:  the left side, where the yellow
+cylinder was in Figure~\ref{fig:overview}, is now green.  Why?
+
+The colors did not change.  The green bits in
+Figure~\ref{fig:boundary} are part of the surface of the green
+cylinder that were covered up by the yellow cylinder in
+Figure~\ref{fig:overview}.  \emph{All} of the yellow and green
+surfaces in Figure~\ref{fig:boundary} belong the surface of one of the
+two original cylinders.  That fact will be useful in computing the
+volume.
 
 \section{Geometry}
 
@@ -63,7 +74,7 @@ As is clear from Figure~\ref{fig:boundary}, the drilled-out volume is
 not one of the easy standard shapes, e,g, a sphere.  So, what
 \emph{is} it?
 
-Let's build it from components.  First, what is a cylinder?  Let's
+Let's build it from its components.  First, what is a cylinder?  Let's
 define it as the set of points (\emph{locus}, if you want the jargon)
 at a constant perpendicular distance, $r$, from a line in 3-D space.
 So for a cylinder centered on, say, the $\hat{x}$ axis, then the
@@ -74,6 +85,18 @@ cylinder satisfies
 \label{eq:cylinder}
 For any given value of $x$, this defines a circle; over all values of
 $x$ it's a cylinder, with circular cross-section.
+This becomes clearer in orthogonal projections of our intersecting
+cylinders onto the $xy$, $yz$, and $xz$ planes, shown in
+Figure~\ref{fig:projections}.
+\begin{figure}
+  \includegraphics[scale=0.5]{norbert-projection.png}
+  \caption{Three plane projections of intersecting cylinders.  Upper
+    left:  looking down the $\hat{z}$-axis; upper right:  looking down
+    the $\hat{x}$-axis; lower left:  looking along the
+    $\hat{y}$-axis.  The dashed square on the upper left projection is
+    explained in the text.}
+  \label{fig:projections}
+\end{figure}
 
 What about the intersection of two perpendicular cylinders with equal
 radii, as in Figure~\ref{fig:overview}?  Let's assume that the green
@@ -94,7 +117,8 @@ that the plane figure is a square.\footnote{This needs support, no?}
 
 \begin{figure}
   \includegraphics[scale=0.25]{norbert-square.png}
-  \caption{The blue patch is a square.}
+  \caption{The blue patch, corresponding to the dashed box in
+    Figure~\ref{fig:projections}, is a square.}
   \label{fig:square}
 \end{figure}
 
