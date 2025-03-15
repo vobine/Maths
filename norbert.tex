@@ -98,6 +98,36 @@ Figure~\ref{fig:projections}.
   \label{fig:projections}
 \end{figure}
 
+What happens when we run a dowel through a planer?  That is,
+geometrically, we take the intersection of a cylinder with a plane
+running parallel to the axis of the cylinder?
+\begin{figure}
+  \includegraphics[scale=0.25]{norbert-shaved-cylinder.png}
+  \caption{A cylinder with part shaved off by a plane parallel to the
+    axis of the cylinder.}
+  \label{fig:shaved-cylinder}
+\end{figure}
+Then the result looks like Figure~\ref{fig:shaved-cylinder}, which
+illustrates a useful property of cylinders.  Consider the boundary
+between the (blue) plane and (yellow) cylinder.  I claim that this is
+a straight line.  Proof:  the equation of the plane is $z = k$, where
+$0 < k < r$ is some constant.  So to find an equation for the
+intersection of the plane and the cylinder, substitute for $z$ in
+Equation~\ref{eq:cylinder}:
+\begin{eqnarray*}
+  x^2 + k^2 & = & r^2 \\
+  x^2 & = & r^2 - k^2 \\
+  x & = & \pm \sqrt{r^2 - k^2},
+\end{eqnarray*}
+that is, along the intersection of plane and cylinder, $x$ takes on
+two possible constant values, straddling the $y=0$ plane, while $z$ is
+a constant and $y$ varies however it wants.  This is a line!  The
+intersection is a line, parallel to the $\hat{y}$ axis, which is also
+the axis of the cylinder.
+
+The same reasoning applies to a green cylinder centered on the
+$\hat{x}$ axis.  Or any other color, for that matter.
+
 What about the intersection of two perpendicular cylinders with equal
 radii, as in Figure~\ref{fig:overview}?  Let's assume that the green
 cylinder is centered on the $\hat{x}$ axis and the yellow cylinder is
@@ -112,8 +142,9 @@ or:
   y(z) & = & \pm \sqrt{r^2 - z^2}. \label{eq:y(z)}
 \end{eqnarray}
 
-Notice that $x(z) = y(z)$ for any given value of $z$.  That implies
-that the plane figure is a square.\footnote{This needs support, no?}
+Notice that $|x(z)| = |y(z)|$ for any given value of $z$.  That implies
+that the corners of the plane figure form a square centered on $x = y
+= 0$.
 
 \begin{figure}
   \includegraphics[scale=0.25]{norbert-square.png}
@@ -123,7 +154,11 @@ that the plane figure is a square.\footnote{This needs support, no?}
 \end{figure}
 
 Consider, in Figure~\ref{fig:square}, the intersection with everything
-above $z=0.75$ planed off.  The blue shape is a square.\footnote{Prove it!}
+above $z=0.75$ planed off.  The blue shape is a square, because we've
+established that, first, the edges are line segments; and second, the
+vertices are the corners of a square.  It's a square!
+
+That is the unit we'll use to compute the volume of our shape.
 
 \section{Computing the Volume}
 \label{sec:computing}
